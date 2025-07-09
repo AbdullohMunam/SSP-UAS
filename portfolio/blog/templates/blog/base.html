@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdulloh Mun'am</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.ico' %}">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional: Basic configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#4f46e5',
+                    }
+                }
+            }
+        }
+    </script>
+
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+    {% include 'components/navBar.html' %}
+
+    <div class="h-full">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    {% include 'components/footer.html' %}
+</body>
+
+</html>

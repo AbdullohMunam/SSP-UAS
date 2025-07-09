@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<!-- Blog Section -->
+<section class="pt-20 pb-20 bg-gray-900" id="blog">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Latest <span class="text-blue-600">Articles</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Blog Card 1 -->
+      <article
+        class="group bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-700">
+        <a href="#">
+          <div class="h-48 overflow-hidden">
+            <img src="{% static 'img/blog-thumbnail/tailwind.jpg' %}" alt="Django Tailwind"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-medium text-indigo-600">WEB DEVELOPMENT</span>
+              <span class="text-gray-400">•</span>
+              <span class="text-xs text-gray-400">May 22, 2025</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-600 transition">Building Modern
+              Interfaces with Django & Tailwind</h3>
+            <p class="text-gray-300 mb-4">Learn how to integrate Tailwind CSS into your Django projects to build fast
+              and responsive UIs.</p>
+            <div class="flex items-center">
+              <img src="{% static 'img/foto.jpg' %}" alt="Abdulloh Mun'am" class="w-8 h-8 rounded-full mr-3">
+              <span class="text-sm font-medium text-gray-300">Abdulloh Mun'am</span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <!-- Blog Card 2 -->
+      <article
+        class="group bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-700">
+        <a href="#">
+          <div class="h-48 overflow-hidden">
+            <img src="{% static 'img/blog-thumbnail/top-ai.jpg' %}" alt="AI Tools"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-medium text-pink-600">TECHNOLOGY</span>
+              <span class="text-gray-400">•</span>
+              <span class="text-xs text-gray-400">May 10, 2025</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-600 transition">Top AI Tools You Should
+              Be Using in 2025</h3>
+            <p class="text-gray-300 mb-4">Explore the best AI tools for productivity, development, and creative work
+              this year.</p>
+            <div class="flex items-center">
+              <img src="{% static 'img/foto.jpg' %}" alt="Abdulloh Mun'am" class="w-8 h-8 rounded-full mr-3">
+              <span class="text-sm font-medium text-gray-300">Abdulloh Mun'am</span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <!-- Blog Card 3 -->
+      <article
+        class="group bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-700">
+        <a href="#">
+          <div class="h-48 overflow-hidden">
+            <img src="{% static 'img/blog-thumbnail/devops.png' %}" alt="DevOps Trends"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-medium text-yellow-600">DEVOPS</span>
+              <span class="text-gray-400">•</span>
+              <span class="text-xs text-gray-400">April 30, 2025</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-600 transition">DevOps Trends That Are
+              Changing the Game</h3>
+            <p class="text-gray-300 mb-4">Stay ahead in the DevOps world with these emerging practices and technologies.
+            </p>
+            <div class="flex items-center">
+              <img src="{% static 'img/foto.jpg' %}" alt="Abdulloh Mun'am" class="w-8 h-8 rounded-full mr-3">
+              <span class="text-sm font-medium text-gray-300">Abdulloh Mun'am</span>
+            </div>
+          </div>
+        </a>
+      </article>
+      <!-- Blog Card 4 -->
+      <article
+        class="group bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-700">
+        <a href="#">
+          <div class="h-48 overflow-hidden">
+            <img src="{% static 'img/blog-thumbnail/flutter-tips.png' %}" alt="Flutter Tips"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-medium text-blue-600">MOBILE DEVELOPMENT</span>
+              <span class="text-gray-400">•</span>
+              <span class="text-xs text-gray-400">May 15, 2023</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-600 transition">Optimizing Flutter App
+              Performance</h3>
+            <p class="text-gray-300 mb-4">Essential techniques to make your Flutter applications run smoother and faster
+              on all devices.</p>
+            <div class="flex items-center">
+              <img src="{% static 'img/foto.jpg' %}" alt="Abdulloh Mun'am" class="w-8 h-8 rounded-full mr-3">
+              <span class="text-sm font-medium text-gray-300">Abdulloh Mun'am</span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <!-- Blog Card 5 -->
+      <article
+        class="group bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-700">
+        <a href="#">
+          <div class="h-48 overflow-hidden">
+            <img src="{% static 'img/blog-thumbnail/react-vs-nextjs.png' %}" alt="React vs Next.js"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-medium text-purple-600">WEB DEVELOPMENT</span>
+              <span class="text-gray-400">•</span>
+              <span class="text-xs text-gray-400">April 28, 2023</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-600 transition">React vs Next.js: When to
+              Use Each</h3>
+            <p class="text-gray-300 mb-4">A comprehensive comparison to help you choose the right framework for your
+              next project.</p>
+            <div class="flex items-center">
+              <img src="{% static 'img/foto.jpg' %}" alt="Abdulloh Mun'am" class="w-8 h-8 rounded-full mr-3">
+              <span class="text-sm font-medium text-gray-300">Abdulloh Mun'am</span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <!-- Blog Card 6 -->
+      <article
+        class="group bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-700">
+        <a href="#">
+          <div class="h-48 overflow-hidden">
+            <img src="{% static 'img/blog-thumbnail/ui-ux-trends.png' %}" alt="UI/UX Trends"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-medium text-green-600">UI/UX DESIGN</span>
+              <span class="text-gray-400">•</span>
+              <span class="text-xs text-gray-400">March 10, 2023</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-600 transition">2023 UI/UX Design Trends
+              to Watch</h3>
+            <p class="text-gray-300 mb-4">The most impactful design trends this year that will shape user experiences
+              across digital products.</p>
+            <div class="flex items-center">
+              <img src="{% static 'img/foto.jpg' %}" alt="Abdulloh Mun'am" class="w-8 h-8 rounded-full mr-3">
+              <span class="text-sm font-medium text-gray-300">Abdulloh Mun'am</span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+
+    </div>
+  </div>
+</section>
+{% endblock %}

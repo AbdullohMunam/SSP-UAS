@@ -1,0 +1,112 @@
+<!-- templates/partials/navbar.html -->
+<nav class="bg-gray-800 shadow-sm fixed w-full z-20 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <a href="/" class="flex-shrink-0 flex items-center">
+                <span class="text-xl font-bold text-white">Mun'am</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden sm:ml-6 sm:flex sm:space-x-8 ml-auto">
+                <a href="/"
+                   class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium
+                   {% if request.path == '/' %}
+                       border-blue-500 text-blue-400
+                   {% else %}
+                       border-transparent text-gray-300 hover:border-gray-500 hover:text-white
+                   {% endif %}">
+                    Home
+                </a>
+                <a href="/blog"
+                   class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium
+                   {% if '/blog/' in request.path %}
+                       border-blue-500 text-blue-400
+                   {% else %}
+                       border-transparent text-gray-300 hover:border-gray-500 hover:text-white
+                   {% endif %}">
+                    Blog
+                </a>
+                <a href="/project"
+                   class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium
+                   {% if '/project/' in request.path %}
+                       border-blue-500 text-blue-400
+                   {% else %}
+                       border-transparent text-gray-300 hover:border-gray-500 hover:text-white
+                   {% endif %}">
+                    Project
+                </a>
+                <a href="/contact"
+                   class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium
+                   {% if '/contact/' in request.path %}
+                       border-blue-500 text-blue-400
+                   {% else %}
+                       border-transparent text-gray-300 hover:border-gray-500 hover:text-white
+                   {% endif %}">
+                    Contact
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="sm:hidden flex items-center">
+                <button type="button" id="mobile-menu-button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none"
+                        aria-expanded="false"
+                        aria-controls="mobile-menu">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Hamburger icon -->
+                    <svg class="block h-6 w-6" id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                    <!-- Close icon -->
+                    <svg class="hidden h-6 w-6" id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="hidden sm:hidden bg-gray-800 shadow-lg" id="mobile-menu">
+        <div class="pt-2 pb-3 space-y-1">
+            <a href="/"
+               class="block pl-3 pr-4 py-2 border-l-4 border-blue-500 text-base font-medium text-blue-400 bg-gray-900">
+                Home
+            </a>
+            <a href="/blog"
+               class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 hover:border-gray-500">
+                Blog
+            </a>
+            <a href="/project"
+               class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 hover:border-gray-500">
+                Project
+            </a>
+            <a href="/contact"
+               class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 hover:border-gray-500">
+                Contact
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        const menu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('menu-open-icon');
+        const closeIcon = document.getElementById('menu-close-icon');
+
+        menu.classList.toggle('hidden');
+        openIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+    });
+</script>
