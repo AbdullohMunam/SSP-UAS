@@ -1,0 +1,40 @@
+.
+├── blog
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── templates
+│   │   └── blog
+│   │       ├── base.html
+│   │       ├── blog.html
+│   │       ├── components
+│   │       │   ├── footer.html
+│   │       │   ├── home
+│   │       │   │   ├── blogSection.html
+│   │       │   │   ├── heroSection.html
+│   │       │   │   ├── projectSection.html
+│   │       │   │   └── skillSection.html
+│   │       │   └── navBar.html
+│   │       ├── contact.html
+│   │       ├── index.html
+│   │       ├── merge_files.py
+│   │       ├── output.txt
+│   │       └── project.html
+│   ├── tests.py
+│   └── views.py
+├── manage.py
+├── portfolio
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   └── settings.cpython-312.pyc
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── struktur.txt
+
+9 directories, 29 files
