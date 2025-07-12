@@ -28,10 +28,10 @@
     {% block extra_head %}{% endblock %}
 </head>
 
-<body>
+<body class="min-h-screen flex flex-col">
     {% include 'blog/components/navBar.html' %}
 
-    <div class="h-full">
+    <div class="flex-1 h-full">
         {% block content %}
         {% endblock %}
     </div>

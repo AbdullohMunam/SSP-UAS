@@ -14,101 +14,42 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- Blog Card 1 -->
+      {% for blog in blogs %}
       <article class="group bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-700">
         <a href="#">
           <div class="h-48 overflow-hidden">
-            <img src="{% static 'img/blog-thumbnail/tailwind.jpg' %}" 
-                 alt="Django Tailwind" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            {% if blog.image %}
+            <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            {% else %}
+            <img src="{% static 'img/blog-thumbnail/default.jpg' %}" alt="No Image" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            {% endif %}
           </div>
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
-              <span class="text-xs font-medium text-indigo-400">WEB DEVELOPMENT</span>
+              <span class="text-xs font-medium text-indigo-400">{{ blog.category }}</span>
               <span class="text-gray-500">•</span>
-              <span class="text-xs text-gray-400">May 22, 2025</span>
+              <span class="text-xs text-gray-400">
+                {{ blog.created_at|date:"F d, Y" }}
+              </span>
             </div>
             <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition">
-              Building Modern Interfaces with Django & Tailwind
+              {{ blog.title }}
             </h3>
             <p class="text-gray-300 mb-4">
-              Learn how to integrate Tailwind CSS into your Django projects to build fast and responsive UIs.
+              {{ blog.content|truncatewords:25 }}
             </p>
-            <div class="flex items-center">
-              <img src="{% static 'img/foto.jpg' %}" 
-                   alt="Abdulloh Mun'am" 
-                   class="w-8 h-8 rounded-full mr-3">
-              <span class="text-sm font-medium text-gray-300 group-hover:text-white">Abdulloh Mun'am</span>
-            </div>
           </div>
         </a>
       </article>
-
-      <!-- Blog Card 2 -->
-      <article class="group bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-700">
-        <a href="#">
-          <div class="h-48 overflow-hidden">
-            <img src="{% static 'img/blog-thumbnail/top-ai.jpg' %}" 
-                 alt="AI Tools" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-          <div class="p-6">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="text-xs font-medium text-pink-400">TECHNOLOGY</span>
-              <span class="text-gray-500">•</span>
-              <span class="text-xs text-gray-400">May 10, 2025</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition">
-              Top AI Tools You Should Be Using in 2025
-            </h3>
-            <p class="text-gray-300 mb-4">
-              Explore the best AI tools for productivity, development, and creative work this year.
-            </p>
-            <div class="flex items-center">
-              <img src="{% static 'img/foto.jpg' %}" 
-                   alt="Abdulloh Mun'am" 
-                   class="w-8 h-8 rounded-full mr-3">
-              <span class="text-sm font-medium text-gray-300 group-hover:text-white">Abdulloh Mun'am</span>
-            </div>
-          </div>
-        </a>
-      </article>
-
-      <!-- Blog Card 3 -->
-      <article class="group bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-700">
-        <a href="#">
-          <div class="h-48 overflow-hidden">
-            <img src="{% static 'img/blog-thumbnail/devops.png' %}" 
-                 alt="DevOps Trends" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-          <div class="p-6">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="text-xs font-medium text-yellow-400">DEVOPS</span>
-              <span class="text-gray-500">•</span>
-              <span class="text-xs text-gray-400">April 30, 2025</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition">
-              DevOps Trends That Are Changing the Game
-            </h3>
-            <p class="text-gray-300 mb-4">
-              Stay ahead in the DevOps world with these emerging practices and technologies.
-            </p>
-            <div class="flex items-center">
-              <img src="{% static 'img/foto.jpg' %}" 
-                   alt="Abdulloh Mun'am" 
-                   class="w-8 h-8 rounded-full mr-3">
-              <span class="text-sm font-medium text-gray-300 group-hover:text-white">Abdulloh Mun'am</span>
-            </div>
-          </div>
-        </a>
-      </article>
-
+      {% empty %}
+      <div class="col-span-3 text-center text-gray-400 py-12">
+        No articles found.
+      </div>
+      {% endfor %}
     </div>
 
     <div class="mt-12 text-center">
-      <a href="\blog" class="inline-flex items-center px-6 py-3 border border-gray-600 shadow-sm text-base font-medium rounded-lg text-gray-200 bg-gray-700 hover:bg-gray-600">
+      <a href="/blog" class="inline-flex items-center px-6 py-3 border border-gray-600 shadow-sm text-base font-medium rounded-lg text-gray-200 bg-gray-700 hover:bg-gray-600">
         View All Articles
         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>

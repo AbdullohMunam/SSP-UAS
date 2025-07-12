@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "unfold",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -126,3 +127,14 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+UNFOLD = {
+    "SITE_TITLE": "Portfolio Admin",
+    "SITE_HEADER": "Portfolio Admin",
+    "SITE_LOGO": "/static/img/admin/logo.png",  # pastikan file ini ada
+    "SITE_FAVICON": "/static/img/admin/favicon.ico",
+}
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
